@@ -14,3 +14,4 @@
   3. Install aws-vault -
      `brew install --cask aws-vault`
      
+  4. Install VScode.
