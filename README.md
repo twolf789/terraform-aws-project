@@ -21,4 +21,17 @@
      Use am IAM user with the following policies:
       - AdministatorAccess
       - ForceMFA -> Use the `forcemfa_policy.json` to create the policy.
-   
+      - Create an access key for this user.
+
+  6. Use aws-vault to add (store) your IAM user’s access key,
+     You may name the profile “terraform.test”:
+     `aws-vault add terraform.test`
+     `aws-vault list`
+     `aws-vault exec terraform.test -d 24h`
+  
+  7. Now, go to ~/.aws/config.
+     Under `[profile terraform.test]`:
+      - `region=eu-central-1`
+      - `mfa_serial=arn:aws:iam::xxxxxxxxxxxx:mfa/terraform.test`
+  
+     
